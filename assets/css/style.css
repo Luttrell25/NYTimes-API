@@ -1,0 +1,57 @@
+.cont {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+body {
+  background: white;
+  height: 100%;
+}
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  background: blue;
+  color: white;
+  border: 1px solid black;
+}
+
+.title {
+  font-size: 90px;
+}
+
+.inputSection * {
+  display: block;
+}
+
+.inputSection form {
+  margin: 0 auto;
+  width: 80%;
+}
+
+input, select {
+  width: 100%;
+}
+
+.inputSection {
+  margin-top: 10%;
+  height: 30%;
+  display: flex;
+  -ms-align-items: center;
+  justify-content: center;
+  align-items: center;
+    border: 1px solid black;
+}
+
+.outputSection {
+  margin-top: 10%;
+  height: 30%;
+  display: flex;
+  -ms-align-items: center;
+  justify-content: center;
+  align-items: center;
+    border: 1px solid black;
+}
