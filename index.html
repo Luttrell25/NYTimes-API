@@ -1,59 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <meta charset="UTF-8">
+    <!--
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/meyer-reset/2.0/reset.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script
   src="http://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>NewYork Times Search</title>
   </head>
+  
   <body>
-    <div class="cont">
-      <div class="mainHeader">
-        <span class="fa fa-newspaper-o fa-3x">
+   
+    <div class="container">
+      
+      <div class="row blue">
+        <div class="col s12 m12">
+          
+          <h1 class="center-text">
+            <i class="large material-icons">library_books</i>
+            New York Times
+          </h1>
+          
+        </div>
+      </div>
+      
+      <form>
+        
+        <div class="row">
+          <div class="col s12 m12">    
+            <label>Search Term</label>
+            <input id="searchTerm" type="text">
+          </div>
+        </div>    
 
-        </span>
-        <span class="title">
-          New York Times
-        </span>
-      </div>
-      <div class="inputSection">
-        <form>
-          <label>Search Term</label>
-          <input id="searchTerm" type="text">
-          <label>Number of Records to Retrieve:</label>
-          <select id="numItems">
-            <option value="1">1</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-          </select>
-          <label>Start Year (optional)</label>
-          <input id="start" type="text">
-          <label id="end">End Year (optional)</label>
-          <input type="text">
-          <input id="submit" type="submit" value="Submit">
-          <input id="clear" type="submit" value="Clear">
-        </form>
-      </div>
-      <div class="outputSection">
-        <div id="articles" class="articles">
-          <div class="article">
-            <span class="article-number"></span>
-            <h2>Here is the title of the article</h2>
-            <p>By AUTHOR</p>
-            <p>Section: TYPE</p>
-            <p>Date/time</p>
-            <a href="">URL</a>
+        <div class="row">
+          <div class="input-field col s12 m12">
+            <select id="numItems">
+              <option value="10" selected>10</option>
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            <label>Number of Record Selected</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m12">
+              <label>Start Year (optional)</label>
+              <input id="start" type="text">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m12">
+            <label id="end">End Year (optional)</label>
+            <input type="text">
+            
+            <input id="submit" type="submit" value="Submit">
+            <input id="clear" type="submit" value="Clear">
+  
+          </div>
+        </div>
+      
+      </form>
+
+
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="outputSection">
+            <div id="articles" class="articles">
+              
+            </div>
           </div>
         </div>
       </div>
+    
     </div>
     <script src="assets/js/script.js"></script>
+  
   </body>
+
 </html>

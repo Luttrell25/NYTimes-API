@@ -1,27 +1,38 @@
-$("#submit").click(function(){
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
+$("#submit").click(function(event){
     var apikey="6ef554a8ac544c06913583bdf51b3973";
-    var url="https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+apikey;
+    var url="https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+apikey+"&";
     var flag=1;
-    if($("#searchTerm").val == ""){
+
+    event.preventDefault();
+
+    if($("#searchTerm").val() == ""){
         flag=0;
     }
     else{
-        url+="q="+$("#searchTerm").val;
+        url+="q="+$("#searchTerm").val() + "&";
     }
-    if($("#numItems").val == ""){
+    if($("#numItems").val() == ""){
         flag=0;
     }
     else{
-        url+="page="+$("#numItems").val;
+        url+="page="+$("#numItems").val() + "&";
     }
-    if($("#start").val != ""){
-        url+="begin_date="+$("#start").val;
+    if($("#start").val() != ""){
+        url+="begin_date="+$("#start").val() + "&";
     }
-    if($("#end").val == ""){
-        url+="end_date="+$("#end").val;
+    if($("#end").val() != ""){
+        url+="end_date="+$("#end").val() + "&";
     }
+
+    console.log(url);
+
     if(flag){
         callAPI(url);
+        console.log("callAPI");
     }
 
 });
@@ -33,6 +44,10 @@ function callAPI(url){
     }).done(function(result) {
           console.log(result.response.docs);
           populate(result.response.docs);
+    }).fail(function(err) {
+
+        throw err;
+
     });
 
 };
@@ -57,6 +72,7 @@ function populate(data){
         tempArticle.append(type);
         tempArticle.append(date);
         tempArticle.append(url);
+        tempArticle.append("<hr>")
         $("#articles").append(tempArticle);
     };
 };
